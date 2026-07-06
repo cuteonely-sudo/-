@@ -1,0 +1,193 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Noto Sans KR","Malgun Gothic",sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    color:#222;
+}
+
+/* HEADER */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:#0b3a66;
+    color:white;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+}
+
+.search{
+    display:flex;
+    width:40%;
+}
+
+.search input{
+    flex:1;
+    padding:10px;
+    border:none;
+    outline:none;
+    border-radius:4px 0 0 4px;
+}
+
+.search button{
+    padding:10px 15px;
+    border:none;
+    background:#1e6bb8;
+    color:white;
+    cursor:pointer;
+}
+
+.user{
+    text-align:right;
+    font-size:13px;
+}
+
+/* TOP MENU */
+.topmenu{
+    background:#fff;
+    border-bottom:1px solid #ddd;
+}
+
+.topmenu ul{
+    display:flex;
+    list-style:none;
+    justify-content:center;
+}
+
+.topmenu li{
+    padding:15px 25px;
+    cursor:pointer;
+}
+
+.topmenu li:hover{
+    background:#eef3f8;
+}
+
+/* LAYOUT */
+.container{
+    display:flex;
+    max-width:1300px;
+    margin:20px auto;
+    gap:20px;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:220px;
+    background:#fff;
+    padding:15px;
+    border:1px solid #ddd;
+}
+
+.side-title{
+    font-weight:700;
+    margin:10px 0;
+    color:#0b3a66;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    padding:10px;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+.sidebar li:hover{
+    background:#eef3f8;
+}
+
+/* MAIN */
+.main{
+    flex:1;
+}
+
+/* BANNER */
+.banner{
+    background:linear-gradient(135deg,#0b3a66,#1e6bb8);
+    color:white;
+    padding:40px;
+    border-radius:10px;
+}
+
+.banner h1{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+/* NOTICE */
+.notice{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    border:1px solid #ddd;
+    margin-top:20px;
+}
+
+.notice h2{
+    margin-bottom:15px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:12px;
+    border-bottom:1px solid #eee;
+}
+
+/* INFO */
+.info{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:20px;
+}
+
+.box{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    border:1px solid #ddd;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+    background:#0b3a66;
+    color:white;
+}
+
+function login(){
+
+    const id = document.getElementById("userId").value;
+    const pw = document.getElementById("userPw").value;
+
+    if(!id || !pw){
+        alert("아이디와 비밀번호를 입력하세요.");
+        return;
+    }
+
+    // 임시 로그인 로직 (실제 서버 없음)
+    if(id === "admin" && pw === "1234"){
+        alert("로그인 성공");
+        location.href = "index.html";
+    }else{
+        alert("로그인 실패");
+    }
+}

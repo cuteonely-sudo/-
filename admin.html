@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>관리자</title>
+<link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<script src="script.js"></script>
+<script>
+const session = checkAdmin();
+</script>
+
+<h2>관리자 페이지</h2>
+
+<div id="users"></div>
+
+<script>
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+document.getElementById("users").innerHTML =
+    users.map(u =>
+        `<p>${u.id} / ${u.role}</p>`
+    ).join("");
+</script>
+
+</body>
+</html>
